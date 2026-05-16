@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* 🌈 modern gradient background */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+/* Heading */
+.heading{
+    text-align: center;
+    margin-top: 10px;
+    font-size: clamp(20px, 4vw, 34px);
+    font-weight: bold;
+}
+
+/* Game board */
+.boss{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(70px, 100px));
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* Cells (modern glass look) */
+.cell{
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    border-radius: 18px;
+    font-size: clamp(28px, 6vw, 44px);
+    cursor: pointer;
+
+    /* glass effect */
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+
+    backdrop-filter: blur(10px);
+    transition: 0.2s ease-in-out;
+}
+
+.cell:hover{
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Buttons */
+.btn,
+.btn2{
+    margin-top: 20px;
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    color: white;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+
+    transition: 0.3s;
+}
+
+.btn:hover,
+.btn2:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Message box */
+.msg-container{
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    padding: 15px 25px;
+    border-radius: 12px;
+}
+
+/* Hide */
+.hide{
+    display: none;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px){
+    .boss{
+        gap: 10px;
+    }
+
+    .btn2{
+        width: 80%;
+    }
+}
